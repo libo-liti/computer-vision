@@ -68,9 +68,9 @@ def test(): # 자기가 원하는 이미지 넣어서 테스트 하는 단계
            print("올바르지 않은 번호입니다. 다시 입력해 주시기 바랍니다.\n\n")
            continue
        input_img = cv2.imread('face_img/test/test%03d.jpg' % i, cv2.IMREAD_COLOR)
-       input_img = cv2.resize(input_img, (width, height))
-       cv2.imshow("input", input_img) # 입력영상 출력
-       cv2.moveWindow('input', 800, 300)
+       input_img = cv2.resize(input_img, (300, 300))
+       cv2.imshow(f"input {i}", input_img) # 입력영상 출력
+       cv2.moveWindow(f'input {i}', 400, 300)
 
        input_img = cv2.imread('face_img/test/test%03d.jpg' % i, cv2.IMREAD_GRAYSCALE)
        input_img = cv2.resize(input_img, (width, height))
@@ -88,9 +88,9 @@ def test(): # 자기가 원하는 이미지 넣어서 테스트 하는 단계
                min_value = value_sum
                num = j
        img = cv2.imread('face_img/train/train%03d.jpg' % num)
-       img = cv2.resize(img, (width, height))
-       cv2.imshow("result", img)           # 출력영상
-       cv2.moveWindow('result', 400, 300)
+       img = cv2.resize(img, (300, 300))
+       cv2.imshow(f"result {num}", img)           # 출력영상
+       cv2.moveWindow(f'result {num}', 800, 300)
        cv2.waitKey()
        cv2.destroyAllWindows()
 
